@@ -1,0 +1,24 @@
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - Multi-Boxing Blog</title>
+		{% else %}
+		<title>Welcome to this blog</title>
+		{% endif %}
+	</head>
+	<body>
+		{% with links = links %}
+		{% include "top_navigation.html" %}
+		{% endwith %}
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+	</body>
+</html>

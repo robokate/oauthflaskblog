@@ -1,0 +1,6 @@
+{% block top_navigation %}
+	{% for link in links %}
+		<span><a href="{{ link.url }}">{{ link.title }}</a></span>&nbsp;
+	{% endfor %}
+	<hr>
+{% endblock %}
